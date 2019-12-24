@@ -1,4 +1,3 @@
-const toPath = require('./topath')
 const get = require('lodash/get')
 
 //still trying to replace lodash.get becuase its way too huge
