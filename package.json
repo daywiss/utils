@@ -1,20 +1,41 @@
 {
-  "name": "@daywiss/utils",
+  "name": "ynk",
   "version": "0.0.1",
-  "main": "index.js",
   "license": "MIT",
+  "main": "dist/ynk.js",
+  "description": "compact utility library used on frontend or backend",
+  "module": "dist/ynk.modern.mjs",
+  "browser": "dist/ynk.modern.mjs",
   "scripts": {
-    "bench": "radargun test/benchmark.js",
-    "bench.get": "node benchmark/get.js",
-    "bench.set": "node benchmark/set.js",
-    "test": "node test/test"
+    "build": "microbundle -f modern,cjs",
+    "test": "node test",
+    "prepublish": "npm run build",
+    "release": "yarn build && yarn test && & git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
+  "files": [
+    "index.js",
+    "dist",
+    "async",
+    "*.js"
+  ],
+  "keywords": [
+    "utilities",
+    "utils",
+    "frontend",
+    "stream",
+    "store",
+    "dispatch",
+    "small",
+    "compact",
+    "isomorphic"
+  ],
   "devDependencies": {
     "benchmark": "^2.1.4",
     "radargun": "^1.0.1",
     "tape": "^4.12.0"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "microbundle": "^0.12.0-next.7"
   }
 }

@@ -3,7 +3,7 @@ const ignoreDefaults = [
   /\internal\/process/,
 ]
 
-function CleanStack = (ignore=ignoreDefaults) => (stack='',start=0,end)=>{
+const CleanStack = (ignore=ignoreDefaults) => (stack='',start=0,end)=>{
   return stack
     .split('\n')
     .slice(start, end)
@@ -14,4 +14,4 @@ function CleanStack = (ignore=ignoreDefaults) => (stack='',start=0,end)=>{
     })
     .join('\n')
 }
-module.exports = CleanStack
+export default CleanStack

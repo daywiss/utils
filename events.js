@@ -1,18 +1,18 @@
-const assert = require('./assert')
+import assert from './assert'
 
-module.exports = ()=>{
-  const listeners = new Map()
+export default ()=>{
+  const listeners = new Set()
   function off(cb){
     listeners.delete(cb)
   }
   function on(cb){
     assert(cb,'requires callback')
-    listeners.push(cb)
+    listeners.add(cb)
     return ()=>off(cb)
   }
   function emit(...args){
     listeners.forEach(cb=>cb(...args))
-  },
+  }
   return {
     on,
     off,

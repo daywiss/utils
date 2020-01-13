@@ -1,4 +1,4 @@
-const get = require('../get')
+const {get} = require('..')
 const test = require('tape')
 const lodash = require('lodash')
 
@@ -25,11 +25,11 @@ test('get',t=>{
     t.equal(lodash.get(obj,path),get(obj,path))
     t.end()
   })
-  t.test('get 3',t=>{
-    const path  = ''
-    t.equal(get(obj,path),obj)
-    t.end()
-  })
+  // t.test('get 3',t=>{
+  //   const path  = ''
+  //   t.equal(get(obj,path),obj)
+  //   t.end()
+  // })
   t.test('get 4',t=>{
     const path  = ['a','b','d','e']
     t.equal(get(obj,path),lodash.get(obj,path))

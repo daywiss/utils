@@ -11,7 +11,6 @@ function touch(state={},path=[],cb=x=>x,i=0){
   touch(state[head],path,cb,i+1)
   return state
 }                        
-
-module.exports = touch
+export default touch
 
 

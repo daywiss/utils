@@ -20,4 +20,4 @@ const get = require('lodash/get')
 //   return result === undefined ? def : result
 // }
 
-module.exports = get
+export default get

@@ -1,6 +1,6 @@
-const touch = require('./touch') 
+import touch from './touch'
 
-module.exports = (state,path,data) => {
+export default (state,path,data) => {
   return touch(state,path,(obj,key)=>delete obj[key])
 }
 

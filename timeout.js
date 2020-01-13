@@ -1,4 +1,4 @@
-module.exports = (fn,duration,...args) => {
+export default (fn,duration,...args) => {
   const stop = setTimeout(fn,duration,...args)
   return ()=>clearTimeout(stop)
 }

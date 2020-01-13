@@ -1,3 +1,3 @@
-module.exports = require('lodash/toPath')
+export {default} from 'lodash/toPath'
 
 
