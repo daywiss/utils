@@ -10,7 +10,7 @@
     "build": "microbundle -f modern,cjs",
     "test": "node test",
     "prepublish": "npm run build",
-    "release": "yarn build && yarn test && & git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": "yarn build && yarn test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "files": [
     "index.js",
