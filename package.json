@@ -37,5 +37,8 @@
   "dependencies": {
     "lodash": "^4.17.15",
     "microbundle": "^0.12.0-next.7"
-  }
+  },
+  "author": "David Adams <daywiss@gmail.com> (http://daywiss.com)",
+  "repository": "daywiss/utils",
+  "license": "MIT"
 }
