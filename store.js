@@ -35,8 +35,6 @@ export default (state={})=>{
   function on(cb,isEqual){
     assert(isFunction(cb),'requires callback function',on)
 
-    cb(state)
-
     if(isEqual){
       if(isString(isEqual)){
         listeners.set(cb,wrapPathArray(isEqual))
