@@ -11,7 +11,7 @@ export default ()=>{
     return ()=>off(cb)
   }
   function emit(...args){
-    listeners.forEach(cb=>cb(...args))
+    listeners.forEach(cb=>setTimeout(cb,0,...args))
   }
   return {
     on,
