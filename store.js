@@ -32,21 +32,19 @@ export default (state={})=>{
     return get(prev,path) == get(next,path)
   }
 
-  function on(cb,isEqual){
+  function on(cb,isEqual=[]){
     assert(isFunction(cb),'requires callback function',on)
 
-    if(isEqual){
-      if(isString(isEqual)){
-        listeners.set(cb,wrapPathArray(isEqual))
-      }
-      else if(isArray(isEqual)){
-        listeners.set(cb,wrapPathArray(isEqual))
-      }
-      else if(isFunction(isEqual)){
-        listeners.set(cb,isEqual)
-      }else{
-        throw new Error('isEqual must be string, array of strings, array of arrays, or a function')
-      }
+    if(isString(isEqual)){
+      listeners.set(cb,wrapPathString(isEqual))
+    }
+    else if(isArray(isEqual)){
+      listeners.set(cb,wrapPathArray(isEqual))
+    }
+    else if(isFunction(isEqual)){
+      listeners.set(cb,isEqual)
+    }else{
+      throw new Error('isEqual must be string, array of strings, array of arrays, or a function')
     }
 
     return ()=>off(cb)

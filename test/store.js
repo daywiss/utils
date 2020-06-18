@@ -6,26 +6,54 @@ test('store',t=>{
   t.test('init',t=>{
 
     store = Store()
-    dispatch = Dispatch(store)((state,action,...args)=>{
-      console.log(state,action,args)
-      return {
-        ...state,
-        [action]:args[0]
-      }
-    })             
+    // dispatch = Dispatch(store)((state,action,...args)=>{
+    //   return {
+    //     ...state,
+    //     [action]:args[0]
+    //   }
+    // })             
     t.ok(store)
     t.end()
   })
-  t.test('dispatch',t=>{
-    dispatch('test',true)
-    t.end()
+  t.test('set',t=>{
+    const off = store.on(state=>{
+      t.ok(state)
+      off()
+      t.end()
+    })
+    store.set({
+      a:'test',
+    })
   })
-  // t.test('curry',t=>{
-  //   store.curry()('test')(true)
-  //   t.end()
-  // })
-  // t.test('curry2',t=>{
-  //   store.curry(2)('test')(true)()
-  //   t.end()
-  // })
+  t.test('set',t=>{
+    const off = store.on(state=>{
+      t.ok(state)
+      off()
+      t.end()
+    },[])
+    store.set({
+      a:'test',
+    })
+  })
+  t.test('set',t=>{
+    const off = store.on(state=>{
+      t.ok(state)
+      off()
+      t.end()
+    },'')
+    store.set({
+      a:'test',
+    })
+  })
+  t.test('set multi path',t=>{
+    const off = store.on(state=>{
+      t.ok(state)
+      off()
+      t.end()
+    },['',['a']])
+
+    store.set({
+      a:'test',
+    })
+  })
 })
