@@ -1,6 +1,6 @@
 {
   "name": "ynk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "dist/ynk.js",
   "description": "compact utility library used on frontend or backend",
@@ -31,14 +31,13 @@
   ],
   "devDependencies": {
     "benchmark": "^2.1.4",
+    "microbundle": "^0.12.0-next.7",
     "radargun": "^1.0.1",
-    "tape": "^4.12.0",
-    "microbundle": "^0.12.0-next.7"
+    "tape": "^4.12.0"
   },
   "dependencies": {
     "lodash": "^4.17.15"
   },
   "author": "David Adams <daywiss@gmail.com> (http://daywiss.com)",
-  "repository": "daywiss/utils",
-  "license": "MIT"
+  "repository": "daywiss/utils"
 }
